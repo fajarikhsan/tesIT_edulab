@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 12, 2021 at 01:51 AM
+-- Generation Time: Nov 18, 2021 at 01:19 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `edulab`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `id` int(11) NOT NULL,
+  `order_id` varchar(255) NOT NULL,
+  `token` varchar(1000) NOT NULL,
+  `student_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `order_id`, `token`, `student_id`) VALUES
+(10, '9945-5169-A001', '121abb6a-a1ec-490f-92d4-a882873685cc', 1),
+(16, '2985-6111-A007', 'e8169e11-480b-4fcf-8ad8-3dc287dfadd2', 7),
+(17, '1234-5678-A009', '24e90237-d858-49fe-8f53-5aeecd10a997', 9);
 
 -- --------------------------------------------------------
 
@@ -85,6 +107,12 @@ INSERT INTO `students` (`id`, `user_id`, `cabang_belajar`, `total_biaya`, `poton
 --
 
 --
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
@@ -93,6 +121,12 @@ ALTER TABLE `students`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `students`

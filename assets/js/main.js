@@ -1,5 +1,15 @@
 $(document).ready(function () {
 	var url = window.base_url;
+	$("#client_table").DataTable();
+	$("#admin_table").DataTable({
+		columnDefs: [
+			{
+				targets: [2, 4],
+				render: $.fn.dataTable.render.number(",", ".", 0, ""),
+			},
+		],
+		order: [[1, "asc"]],
+	});
 	$("#students").DataTable({
 		searchPanes: {
 			viewTotal: true,

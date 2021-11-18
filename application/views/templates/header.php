@@ -202,6 +202,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <p>Resume Statistik</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('client/client_options'); ?>" class="nav-link <?= ($title == 'Pilihan tampilan client') ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Tampilan Client</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="<?= base_url('admin'); ?>" class="nav-link <?= ($title == 'Tampilan Admin') ? 'active' : '' ?>">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Tampilan Admin</p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

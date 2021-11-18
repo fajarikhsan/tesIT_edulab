@@ -72,4 +72,18 @@ class Student_model extends CI_Model
         GROUP BY cabang_belajar) t2
         ON t1.cabang_belajar = t2.cabang_belajar')->result_array();
     }
+
+    public function getStudentById($user_id)
+    {
+        return $this->db->get_where('students', ['user_id' => $user_id])->row_array();
+    }
+
+    public function getStudentPayments()
+    {
+        return $this->db->select('*')
+            ->from('students')
+            ->join('payment', 'students.id = payment.student_id', 'left')
+            ->get()
+            ->result_array();
+    }
 }
