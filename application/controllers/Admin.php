@@ -63,4 +63,8 @@ class Admin extends CI_Controller
         $this->load->view('pages/admin', $data);
         $this->load->view('templates/footer', $data);
     }
+
+    public function test() {
+        echo "THIS IS A TEST";
+    }
 }
